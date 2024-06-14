@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function stray(numbers) {
+      const obj = {};
+
+      for (let i = 0; i < numbers.length; ++i) {
+        if (obj[numbers[i]]) {
+          obj[numbers[i]] = { ...obj[numbers[i]], count: obj[numbers[i]].count + 1 }
+        } else {
+          obj[numbers[i]] = { name: numbers[i], count: 1 }
+        }
+      }
+
+      return Object.values(obj).sort((a, b) => a.count - b.count)[0].name
+    }
+
+    console.log(stray([1, 1, 2]), 2);
+    console.log(stray([1, 2, 1]), 2);
+    console.log(stray([2, 1, 1]), 2);
+    console.log(stray([14, 2, 2]), 14);
+
+  </script>
+</body>
+</html>
