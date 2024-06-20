@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function dnaStrand(dna){
+      const pattern = {
+        A: 'T',
+        T: 'A',
+        G: 'C',
+        C: "G"
+      }
+
+      return dna.split('').map(el => pattern[el] || el).join('')
+    }
+
+
+    console.log(dnaStrand("AAAA"),"TTTT","String AAAA is")
+    console.log(dnaStrand("ATTGC"),"TAACG","String ATTGC is")
+    console.log(dnaStrand("GTAT"),"CATA","String GTAT is")
+
+  </script>
+</body>
+</html>
